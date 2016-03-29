@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "bfred-npm-bundler": "^5.0.0",
+    "browser-sync": "^2.11.2",
     "uglify-js": "^2.6.2",
     "xo": "^0.13.0"
   },
