@@ -1,7 +1,10 @@
 'use strict';
 var privateAccessor = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='; // transparent image, might as well reuse it
 var propRegex = /(object-fit|object-position)\s*:\s*([^;$"'\s]+)/g;
-var isSupported = 'object-fit' in document.createElement('i').style;
+var testElem = document.createElement('i').style;
+var isFitSupported = 'object-fit' in testElem;
+var isPosSupported = 'object-position' in testElem;
+var isSupported = (isFitSupported && isPosSupported);
 var autoModeEnabled = false;
 
 function getStyle(el) {
