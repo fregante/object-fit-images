@@ -77,6 +77,12 @@ div {
     font-family: 'object-fit: scale-down';
 }
 
+.OF-cover-left {
+  object-fit: cover;
+  object-position: left;
+  font-family: 'object-fit: cover; object-position: left;';
+}
+
 @media (max-width: 700px) {
     html {
         background: #eee;
@@ -120,6 +126,10 @@ hr {
     <div>
         <h2>scale-down</h2>
         <img class="OF-scaleDown" src="https://goo.gl/IyVB38">
+    </div>
+    <div>
+      <h2>cover <br> position: left</h2>
+      <img class="OF-cover-left" src="https://goo.gl/IyVB38">
     </div>
     <div>
         <h2>contain <br> cover @ &lt;700px</h2>
