@@ -32,6 +32,7 @@ function fixOne(el, src, style) {
 	el.style.backgroundPosition = style['object-position'] || 'center';
 	el.style.backgroundSize = style['object-fit'].replace('scale-down', 'contain'); // "object-fit: none" automatically maps to "background-size:auto"
 	el.style.backgroundRepeat = 'no-repeat';
+	el.style['-webkit-user-drag'] = 'element';
 
 	// remove srcset because it overrides src
 	if (el.srcset) {
