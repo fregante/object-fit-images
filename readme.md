@@ -1,4 +1,8 @@
-# object-fit-images
+# object-fit-images as bower package
+
+Added bower support to [object-fit-images](https://github.com/bfred-it/object-fit-images).
+
+Original description:
 
 > Adds support to `object-fit` to images on IE9, IE10, IE11, Edge and other old browsers.
 
