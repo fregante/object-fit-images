@@ -1,0 +1,39 @@
+{
+  "name": "object-fit-images",
+  "version": "2.3.0",
+  "description": "Adds support to object-fit to images on IE9, IE10, IE11, Edge and other old browsers.",
+  "authors": [
+   "Federico Brigante <bfred-it@users.noreply.github.com> (twitter.com/bfred_it)"
+  ],
+  "main": "dist/ofi.browser.js",
+  "moduleType": [],
+  "keywords": [
+    "object-fit",
+    "covers",
+    "contains",
+    "css",
+    "styles",
+    "internet",
+    "explorer",
+    "ies",
+    "polyfill",
+    "shim",
+    "shiv",
+    "fills",
+    "images",
+    "srcset",
+    "backgrounds"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bfred-it/object-fit-images#readme",
+  "ignore": [
+      "**/.*",
+      "node_modules",
+      "bower_components",
+      "test",
+      "tests"
+  ],
+  "bugs": {
+    "url": "https://github.com/bfred-it/object-fit-images/issues"
+  }
+}
