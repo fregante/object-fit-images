@@ -71,7 +71,6 @@ function fixOne(el, requestedSrc) {
 		(function loop() {
 			// https://bugs.chromium.org/p/chromium/issues/detail?id=495908
 			if (el[ಠ].i.naturalWidth) {
-				console.log(el[ಠ].i.naturalWidth);
 				if (el[ಠ].i.naturalWidth > el.width || el[ಠ].i.naturalHeight > el.height) {
 					el.style.backgroundSize = 'contain';
 				} else {
