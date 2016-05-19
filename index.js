@@ -18,7 +18,6 @@ function getStyle(el) {
 
 function fixOne(el, requestedSrc) {
 	var style = getStyle(el);
-	console.log(el);
 
 	// exit if not set
 	// `fill` is the default behavior for <img>
