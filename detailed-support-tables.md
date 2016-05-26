@@ -10,11 +10,11 @@
 
 ### *object-fit-images* + `srcset` + Edge 12
 
-💔 [Edge 12 doesn't support `currentSrc`](https://blogs.windows.com/msedgedev/2015/06/08/introducing-srcset-responsive-images-in-microsoft-edge/) and therefore OFI only uses `src`
+💔 `srcset` is discarded and `src` is used in Edge 12 because [it doesn't support `currentSrc`.](https://blogs.windows.com/msedgedev/2015/06/08/introducing-srcset-responsive-images-in-microsoft-edge/)
 
-### *object-fit-images* + `srcset` + `object-position` + Safari 8.4-
+### *object-fit-images* + `srcset` + `object-position` + Safari 8.x
 
-💛 Safari (iOS 8.4- and OSX 8-) doesn't support `currentSrc` so to add support for `object-position` OFI will discard `srcset` and use `src`.
+💛 `srcset` is discarded and `src` is used in Safari 8.x when used in combination with `object-position` because those versions doesn't support `currentSrc`.
 
 To discard `object-position` instead, use the option `preferSrcsetOverPosition`, example:
 
