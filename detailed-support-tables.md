@@ -6,7 +6,7 @@
 
 0. Load _object-fit-images.js_
 1. Load _picturefill.js_
-2. Call `imageFitImages(...)`
+2. Call `objectFitImages(...)`
 
 This will keep these combinations working correctly:
 
