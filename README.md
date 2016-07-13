@@ -64,6 +64,12 @@ You will need 3 things
 	```
 	
 	To generate the `font-family` automatically, you can use the [PostCSS plugin](https://github.com/ronik-design/postcss-object-fit-images) or the [SCSS/SASS/Less mixins.](/preprocessors)
+	
+	If you're using inline styles, for example with React, then you need to surround the font-family value within another set of quotes (see [this comment](https://github.com/bfred-it/object-fit-images/issues/29#issuecomment-227659716)):
+	
+	```js
+	<img style={{objectFit: cover; objectPosition: bottom; fontFamily: '"object-fit: cover; object-position: bottom;"' />
+	```
 
 0. the activation call before `</body>`, on _on DOM ready_
 
