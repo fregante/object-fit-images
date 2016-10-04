@@ -1,6 +1,6 @@
 {
   "name": "object-fit-images",
-  "version": "2.3.0",
+  "version": "2.5.6",
   "description": "Adds support to object-fit to images on IE9, IE10, IE11, Edge and other old browsers.",
   "authors": [
    "Federico Brigante <bfred-it@users.noreply.github.com> (twitter.com/bfred_it)"

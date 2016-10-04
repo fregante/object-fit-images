@@ -1,5 +1,8 @@
 # Changelog
 
+* 2.5.0 Add support `object-position` where `object-fit` is supported
+* 2.4.0 Add support for `getAttribute`/`setAttribute`
+* 2.4.0 Add support `scale-down`
 * 2.2.0 Don't override the `<img>`'s `background-color`
 * 2.1.0 Further byte savings
 * 2.0.0 Flipped `onresize` default: the values rarely change with media queries, so only enable them when needed with `{watchMQ:true}`

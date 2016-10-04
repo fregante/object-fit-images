@@ -1,7 +1,7 @@
 {
   "name": "object-fit-images",
-  "version": "2.3.0",
-  "description": "Adds support to object-fit to images on IE9, IE10, IE11, Edge and other old browsers.",
+  "version": "2.5.6",
+  "description": "Polyfill object-fit and object-position on images on IE9, IE10, IE11, Edge, Safari, ...",
   "license": "MIT",
   "repository": "bfred-it/object-fit-images",
   "author": "Federico Brigante <bfred-it@users.noreply.github.com> (twitter.com/bfred_it)",
@@ -10,6 +10,7 @@
   },
   "homepage": "https://github.com/bfred-it/object-fit-images#readme",
   "keywords": [
+    "polyfill",
     "object-fit",
     "covers",
     "contains",
@@ -18,7 +19,6 @@
     "internet",
     "explorer",
     "ies",
-    "polyfill",
     "shim",
     "shiv",
     "fills",
@@ -26,27 +26,37 @@
     "srcset",
     "backgrounds"
   ],
-  "main": "dist/ofi.common-js.js",
   "files": [
-    "dist/ofi.common-js.js"
+    "dist/ofi.browser.js",
+    "dist/ofi.common-js.js",
+    "dist/ofi.es-modules.js"
   ],
+  "main": "dist/ofi.common-js.js",
+  "jsnext:main": "dist/ofi.es-modules.js",
   "scripts": {
-    "build": "bfred-npm-bundler ofi objectFitImages",
-    "count-bytes": "npm run build; gzip-size dist/ofi.browser.js",
-    "demo": "browser-sync start --server --index 'demo.html' --files '*'",
+    "build:js": "bfred-npm-bundler ofi objectFitImages",
+    "build": "npm-run-all --silent jsfix build:*",
+    "jsfix": "xo --fix",
+    "watch:server": "browser-sync start --startPath demo --no-ghost-mode --reload-delay 300 --no-open  --server --files 'dist/*.browser.js,demo/**'",
+    "watch:build": "onchange 'index.js' --initial -- npm run build -- --continue-on-error",
+    "watch": "npm-run-all --parallel --silent watch:*",
     "prepublish": "npm run build",
-    "autofix": "xo --fix",
-    "test": "xo"
+    "test": "xo; npm run build"
   },
   "devDependencies": {
-    "bfred-npm-bundler": "^5.0.0",
+    "bfred-npm-bundler": "^7.1.2",
     "browser-sync": "^2.11.2",
-    "uglify-js": "^2.6.2",
-    "xo": "^0.13.0"
+    "npm-run-all": "^2.3.0",
+    "onchange": "^2.2.0",
+    "xo": "^0.16.0"
   },
   "xo": {
+    "esnext": true,
     "env": [
       "browser"
-    ]
+    ],
+    "rules": {
+      "prefer-template": 0
+    }
   }
 }

@@ -1,0 +1,105 @@
+html, body {
+	margin: 20px 20px 100px;
+	padding: 0;
+	font-family: sans-serif;
+	color: #333;
+}
+figure {
+	padding: 10px;
+	margin: 0;
+	box-sizing: border-box;
+}
+figcaption {
+	text-align: left;
+	white-space: nowrap;
+}
+a {
+	color: inherit;
+}
+code {
+	font-size: 1.2em;
+}
+
+h1 {
+	font-weight: 300;
+
+	flex-basis: 100%;
+}
+
+img {
+	border: solid 2px gray;
+}
+
+img[class] {
+	height: calc(20vw - 50px);
+	width: 17vw;
+	min-height: 150px;
+	min-width: 150px;
+}
+
+img.responsiveimg {
+	width: 30vw
+}
+
+img.object-position {
+	height: 10vw;
+}
+.of-supported,
+.of-not-supported {
+	display: none;
+}
+
+section {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	border-top: 1px solid lightgray;
+	margin-top: 1em;
+}
+section figure {
+	flex-basis: 33%;
+	min-width: 160px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.OF-fill {
+	object-fit: fill;
+	font-family: 'object-fit: fill';
+}
+
+.OF-contain {
+	object-fit: contain;
+	font-family: 'object-fit: contain';
+}
+
+.OF-cover {
+	object-fit: cover;
+	font-family: 'object-fit: cover';
+}
+.OF-cover-op {
+	object-fit: cover;
+	object-position: 80% 20%;
+	font-family: 'object-fit: cover; object-position: 80% 20%';
+}
+
+.OF-none {
+	object-fit: none;
+	font-family: 'object-fit: none';
+}
+
+.OF-scaleDown {
+	object-fit: scale-down;
+	font-family: 'object-fit: scale-down';
+}
+
+@media (max-width: 700px) {
+	.xs--OF-cover {
+		object-fit: cover;
+		font-family: 'object-fit: cover';
+		border-color: maroon;
+	}
+}
+

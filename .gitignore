@@ -1,1 +1,12 @@
 node_modules
+.DS_Store
+Desktop.ini
+._*
+Thumbs.db
+*.tmp
+*.bak
+*.log
+logs
+
+*.common-js.js
+*.es-modules.js

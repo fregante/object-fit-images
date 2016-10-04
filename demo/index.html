@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>object-fit-images demo</title>
+	<script src="../dist/ofi.browser.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<h1>
+	Demo page for <a href="https://github.com/bfred-it/object-fit-images">object-fit-images</a>
+	</h1>
+	<p class="of-supported">
+		<code>object-fit</code> natively supported here, fix skipped. <button type="button" onclick="applyOFI()">Apply fix anyway</button>
+	</p>
+	<p class="of-not-supported">
+		<code>object-fit</code> is not natively supported in this browser. <button type="button" onclick="applyOFI()">Apply fix</button>
+	</p>
+	<p>Resize the window to see how they behave.</p>
+	<figure>
+		<img src="https://goo.gl/DvBM70">
+		<figcaption>unmodified <code>&lt;img&gt;</code></figcaption>
+	</figure>
+	<section>
+		<h1>
+			<code>object-fit</code>
+		</h1>
+		<figure>
+			<img class="OF-fill" src="https://goo.gl/DvBM70">
+			<figcaption><code>fill</code> (default)</figcaption>
+		</figure>
+		<figure>
+			<img class="OF-contain" src="https://goo.gl/DvBM70">
+			<figcaption><code>contain</code></figcaption>
+		</figure>
+		<figure>
+			<img class="OF-cover" src="https://goo.gl/DvBM70">
+			<figcaption><code>cover</code></figcaption>
+		</figure>
+		<figure>
+			<img class="OF-none" src="https://goo.gl/DvBM70">
+			<figcaption><code>none</code></figcaption>
+		</figure>
+		<figure>
+			<img class="OF-scaleDown" src="https://goo.gl/DvBM70">
+			<figcaption><code>scale-down</code></figcaption>
+		</figure>
+		<figure>
+			<img class="OF-contain xs--OF-cover" src="https://goo.gl/DvBM70">
+			<figcaption><code>contain</code> <br> <code>cover</code> @ &lt;700px</figcaption>
+		</figure>
+	</section>
+	<section>
+		<h1>
+			<code>object-fit</code> + <code>object-position</code>
+		</h1>
+		<figure>
+			<img class="OF-cover object-position" src="https://goo.gl/DvBM70">
+			<figcaption><code>object-fit: cover</code></figcaption>
+		</figure>
+		<figure>
+			<img class="OF-cover-op object-position" src="https://goo.gl/DvBM70">
+			<figcaption><code>object-fit: cover</code> <br><code>object-position: 80% 20%</code></figcaption>
+		</figure>
+	</section>
+	<section>
+		<h1>
+			Responsive images (with <a href="https://github.com/scottjehl/picturefill">picturefill</a> where needed)
+		</h1>
+		<figure>
+			<img class="OF-contain responsiveimg" src="https://webkit.org/demos/srcset/image-src.png" srcset="https://webkit.org/demos/srcset/image-1x.png 1x, https://webkit.org/demos/srcset/image-2x.png 2x, https://webkit.org/demos/srcset/image-3x.png 3x">
+			<figcaption><code>srcset</code> + <code>contain</code> (@1x, @2x, @3x)</figcaption>
+		</figure>
+	</section>
+	<section>
+		<h1>
+			Detect new images automatically <br> <button type="button" onclick="addImage(this)">Add image</button>
+		</h1>
+	</section>
+	<script>
+
+	function applyOFI(viaUrl) {
+		var btn = document.querySelector('button');
+		btn.disabled = true;
+		objectFitImages(false, {
+			watchMQ: true,
+			skipTest: true
+		});
+		if (objectFitImages.supportsObjectFit) {
+			btn.innerHTML = 'Fix applied anyway' + (viaUrl ? ' via URL' : '');
+		} else {
+			btn.innerHTML = 'Fix applied';
+		}
+	}
+
+	function addImage(btn) {
+		var div = document.createElement('figure');
+		var ofit = ['fill', 'contain', 'cover', 'none', 'scaleDown'][Math.random() * 4 | 0];
+		div.innerHTML = '<img class="OF-' + ofit + '" src="https://goo.gl/DvBM70"><figcaption>new image with <code>' + ofit + '</code></figcaption>';
+		btn.parentNode.parentNode.appendChild(div);
+	}
+
+	document.querySelector(objectFitImages.supportsObjectFit ? '.of-supported' : '.of-not-supported').style.display = 'block';
+
+	// apply automatically if requested non-interactively
+	if (location.search === '?interactive=false') {
+		applyOFI(true);
+	}
+	</script>
+</body>
