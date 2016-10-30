@@ -29,7 +29,8 @@
   "files": [
     "dist/ofi.browser.js",
     "dist/ofi.common-js.js",
-    "dist/ofi.es-modules.js"
+    "dist/ofi.es-modules.js",
+    "preprocessors"
   ],
   "main": "dist/ofi.common-js.js",
   "jsnext:main": "dist/ofi.es-modules.js",
