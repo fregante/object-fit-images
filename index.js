@@ -186,7 +186,7 @@ export default function fix(imgs, opts) {
 	// use imgs as a selector or just select all images
 	if (typeof imgs === 'string') {
 		imgs = document.querySelectorAll('img');
-	} else if ('length' in imgs) {
+	} else if (!'length' in imgs) {
 		imgs = [imgs];
 	}
 
