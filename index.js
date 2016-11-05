@@ -46,15 +46,11 @@ function fixOne(el, requestedSrc) {
 		}
 	} 
 	if (el[ಠ].s && "fill" === style["object-fit"]) {
-		el.style.backgroundImage = '';
-    	el.style.backgroundRepeat = '';
-    	el.style.backgroundPosition = '';
-    	el.style.backgroundSize = '';
-        nativeSetAttribute.call(el, 'src', el[ಠ].s);
-    	if (el[ಠ].srcsetAttr) {
-            nativeSetAttribute.call(el, 'srcset', el[ಠ].srcsetAttr);
-    	}
-    	return;
+		nativeSetAttribute.call(el, 'src', el[ಠ].s);
+		if (el[ಠ].srcsetAttr) {
+			nativeSetAttribute.call(el, 'srcset', el[ಠ].srcsetAttr);
+		}
+		return;
 	}
 
 	let src = el[ಠ].ios7src || el.currentSrc || el.src;
@@ -120,7 +116,7 @@ function fixOne(el, requestedSrc) {
 	}
 
 	nativeSetAttribute.call(el, 'src', ಠ);
-    nativeSetAttribute.call(el, 'srcset', '');
+	nativeSetAttribute.call(el, 'srcset', '');
 	el.style.backgroundImage = 'url("' + src + '")';
 	el.style.backgroundPosition = style['object-position'] || 'center';
 	el.style.backgroundRepeat = 'no-repeat';
