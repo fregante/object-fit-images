@@ -108,7 +108,7 @@ function fixOne(el, requestedSrc) {
 		}
 	}
 
-	el.style.backgroundImage = 'url("' + src + '")';
+	el.style.backgroundImage = 'url("' + src.replace('(', '%28').replace(')', '%29') + '")';
 	el.style.backgroundPosition = style['object-position'] || 'center';
 	el.style.backgroundRepeat = 'no-repeat';
 
@@ -186,7 +186,7 @@ export default function fix(imgs, opts) {
 	// use imgs as a selector or just select all images
 	if (typeof imgs === 'string') {
 		imgs = document.querySelectorAll('img');
-	} else if (!'length' in imgs) {
+	} else if (!('length' in imgs)) {
 		imgs = [imgs];
 	}
 
