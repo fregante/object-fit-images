@@ -139,6 +139,12 @@ If you don't use browserify/webpack, include this instead:
 <script src="dist/ofi.browser.js"></script>
 ```
 
+or from CDN:
+
+```html
+<script src="https://unpkg.com/object-fit-images@2.5.9/dist/ofi.browser.js"></script>
+```
+
 ## API
 
 ### `objectFitImages([images, [options]])`
