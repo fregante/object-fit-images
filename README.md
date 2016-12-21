@@ -142,8 +142,10 @@ If you don't use browserify/webpack, include this instead:
 or from CDN:
 
 ```html
-<script src="https://unpkg.com/object-fit-images@2.5.9/dist/ofi.browser.js"></script>
+<script src="https://unpkg.com/object-fit-images@latest/dist/ofi.browser.js"></script>
 ```
+
+Instead of `@latest` you can specify exact version: `@MAJOR.MINOR.PATCH`. More options at [unpkg.com](https://unpkg.com).
 
 ## API
 
