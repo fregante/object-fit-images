@@ -156,7 +156,7 @@ function keepSrcUsable(el) {
 
 function hijackAttributes() {
 	function getOfiImageMaybe(el, name) {
-		return el[OFI] && (name === 'src' || name === 'srcset') ? el[OFI].img : el;
+		return el[OFI] && el[OFI].img && (name === 'src' || name === 'srcset') ? el[OFI].img : el;
 	}
 	if (!supportsObjectPosition) {
 		HTMLImageElement.prototype.getAttribute = function (name) {
