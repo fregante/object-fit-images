@@ -5,7 +5,7 @@
   "authors": [
    "Federico Brigante <bfred-it@users.noreply.github.com> (twitter.com/bfred_it)"
   ],
-  "main": "dist/ofi.browser.js",
+  "main": "index.js",
   "moduleType": [],
   "keywords": [
     "object-fit",
