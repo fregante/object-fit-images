@@ -1,6 +1,6 @@
 const OFI = 'bfred-it:object-fit-images';
 const propRegex = /(object-fit|object-position)\s*:\s*([-\w\s%]+)/g;
-const testImg = new Image();
+const testImg = typeof Image === 'undefined' ? {style: {'object-position': 1}} : new Image();
 const supportsObjectFit = 'object-fit' in testImg.style;
 const supportsObjectPosition = 'object-position' in testImg.style;
 const supportsOFI = 'background-size' in testImg.style;
