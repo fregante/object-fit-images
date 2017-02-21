@@ -115,7 +115,7 @@ function fixOne(el) {
 
 	polyfillCurrentSrc(ofi.img);
 
-	el.style.backgroundImage = `url(${(ofi.img.currentSrc || ofi.img.src).replace('(', '%28').replace(')', '%29')})`;
+	el.style.backgroundImage = `url('${(ofi.img.currentSrc || ofi.img.src).replace(/(['\\])/g, "\\$1").replace(/\n/g, "\\n")}')`;
 	el.style.backgroundPosition = style['object-position'] || 'center';
 	el.style.backgroundRepeat = 'no-repeat';
 
