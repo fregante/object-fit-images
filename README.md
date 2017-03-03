@@ -2,7 +2,7 @@
 
 > Polyfill `object-fit` and `object-position` on images on IE9, IE10, IE11, Edge, Safari, ...
 
-[![gzipped size](https://badges.herokuapp.com/size/github/bfred-it/object-fit-images/master/dist/ofi.min.js?gzip=true&label=gzipped%20size)](#readme) [![Travis build status](https://api.travis-ci.org/bfred-it/object-fit-images.svg)](https://travis-ci.org/bfred-it/object-fit-images) [![npm version](https://img.shields.io/npm/v/object-fit-images.svg)](https://www.npmjs.com/package/object-fit-images) 
+[![gzipped size](https://badges.herokuapp.com/size/github/bfred-it/object-fit-images/master/dist/ofi.min.js?gzip=true&label=gzipped%20size)](#readme) [![Travis build status](https://api.travis-ci.org/bfred-it/object-fit-images.svg)](https://travis-ci.org/bfred-it/object-fit-images) [![npm version](https://img.shields.io/npm/v/object-fit-images.svg)](https://www.npmjs.com/package/object-fit-images) [![CDNJS version](https://img.shields.io/cdnjs/v/object-fit-images.svg)](https://cdnjs.com/libraries/object-fit-images)
 
 This adds support for `object-fit` and `object-position` to **IEdge 9-13, Android < 5, Safari < 10** and skips browsers that already support them.
 
