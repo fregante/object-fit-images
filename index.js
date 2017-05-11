@@ -177,13 +177,14 @@ function hijackAttributes() {
 export default function fix(imgs, opts) {
 	const startAutoMode = !autoModeEnabled && !imgs;
 	opts = opts || {};
+	imgs = imgs || 'img';
 
 	if ((supportsObjectPosition && !opts.skipTest) || !supportsOFI) {
 		return false;
 	}
 
 	// use imgs as a selector or just select all images
-	if (!imgs) {
+	if (imgs === 'img') {
 		imgs = document.getElementsByTagName('img');
 	} else if (typeof imgs === 'string') {
 		imgs = document.querySelectorAll(imgs);
