@@ -63,9 +63,16 @@ function onImageReady(img, callback) {
 	}
 }
 
-function fixOne(el) {
-	const style = getStyle(el);
+function fixOne(el, styleOverride) {
+	let style;
 	const ofi = el[OFI];
+
+	if (styleOverride['object-fit'] || styleOverride['object-position']) {
+		style = styleOverride;
+	} else {
+		style = getStyle(el);
+	}
+
 	style['object-fit'] = style['object-fit'] || 'fill'; // default value
 
 	// Avoid running where unnecessary, unless OFI had already done its deed
@@ -183,6 +190,16 @@ export default function fix(imgs, opts) {
 		return false;
 	}
 
+	// allow options to override css styles from the 'getStyle()' method
+	const styleOverride = {};
+	const objectFitAllowed = ['fill', 'contain', 'cover', 'none', 'scale-down'];
+	if (opts.objectFit && objectFitAllowed.indexOf(opts.objectFit) !== -1) {
+		styleOverride['object-fit'] = opts.objectFit;
+	}
+	if (opts.objectPosition) {
+		styleOverride['object-position'] = opts.objectPosition;
+	}
+
 	// use imgs as a selector or just select all images
 	if (imgs === 'img') {
 		imgs = document.getElementsByTagName('img');
@@ -195,16 +212,20 @@ export default function fix(imgs, opts) {
 	// apply fix to all
 	for (let i = 0; i < imgs.length; i++) {
 		imgs[i][OFI] = imgs[i][OFI] || {
-			skipTest: opts.skipTest
+			skipTest: opts.skipTest,
+			objectFit: opts.objectFit,
+			objectPosition: opts.objectPosition
 		};
-		fixOne(imgs[i]);
+		fixOne(imgs[i], styleOverride);
 	}
 
 	if (startAutoMode) {
 		document.body.addEventListener('load', e => {
 			if (e.target.tagName === 'IMG') {
 				fix(e.target, {
-					skipTest: opts.skipTest
+					skipTest: opts.skipTest,
+					objectFit: opts.objectFit,
+					objectPosition: opts.objectPosition
 				});
 			}
 		}, true);
@@ -215,7 +236,9 @@ export default function fix(imgs, opts) {
 	// if requested, watch media queries for object-fit change
 	if (opts.watchMQ) {
 		window.addEventListener('resize', fix.bind(null, imgs, {
-			skipTest: opts.skipTest
+			skipTest: opts.skipTest,
+			objectFit: opts.objectFit,
+			objectPosition: opts.objectPosition
 		}));
 	}
 }

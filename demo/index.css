@@ -110,6 +110,16 @@ section figure {
 .object-position {
 	max-height: 33vw;
 }
+
+.INIT-cover {
+	object-fit: cover;
+}
+
+.INIT-cover-op {
+	object-fit: cover;
+	object-position: center 80%;
+}
+
 @media (max-width: 700px) {
 	.xs--OF-cover {
 		object-fit: cover;
