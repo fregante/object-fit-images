@@ -1,5 +1,6 @@
 # Changelog
 
+* 3.3.0 Add support for initialization options `objectFit` and `objectPosition`
 * 3.1.0 Use SVG as a size placeholder instead of canvas
 * 3.0.0 Improved edge cases with `srcset`, `currentSrc`, unsetting `object-fit`, ...
 * 2.5.0 Add support `object-position` where `object-fit` is supported

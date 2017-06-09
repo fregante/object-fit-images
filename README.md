@@ -66,6 +66,8 @@ You will need 3 things
 	To generate the `font-family` automatically, you can use the [PostCSS plugin](https://github.com/ronik-design/postcss-object-fit-images) or the [SCSS/SASS/Less mixins.](/preprocessors)
 	
 	If you set the `font-family` via javascript (which must be followed by calling `objectFitImages()`), make sure to include the quotes [**in** the property.](https://github.com/bfred-it/object-fit-images/issues/29#issuecomment-227491892)
+	
+	It's also possible to specify the `object-fit` property on initialization through javascript instead of using `font-family`. More info in the <a href="#without-font-famly-property">Without 'font-family' property</a> section.
 
 3. <a name="activation"></a> the activation call before `</body>`, or _on DOM ready_
 
@@ -102,6 +104,19 @@ You will need 3 things
 	```
 	
 	You can call `objectFitImages()` on the same elements more than once without issues, for example to manually request an update of the `object-fit` value.
+
+## Without `font-family` property
+
+If you do not have a `font-family` attribute you can still specify the `object-fit` and `object-position` values for Internet Explorer on initialization.
+
+```js
+objectFitImages('img.some-image', {
+        objectFit: 'cover',
+        objectPosition: 'bottom',
+    });
+```
+
+Note that this takes precedence over any specified `font-family` property.
 
 ## Apply on `resize`
 
@@ -176,6 +191,14 @@ Both parameters are optional.
                         Type: <code>boolean</code><br>
                         Default: <code>false</code><br><br>
                         This enables the automatic re-fix of the selected images when the window resizes. You only need it <a href="#apply-on-resize">in some cases</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th><code>objectFit</code></th>
+                    <td>
+                        Type: <code>string</code><br>
+                        Default: <code>null</code><br><br>
+                        This takes precedence over the `font-family` property and applies the specified `object-fit` setting on Internet Explorer.
                     </td>
                 </tr>
             </table>

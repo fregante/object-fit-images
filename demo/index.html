@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>object-fit-images demo</title>
-	<script src="../dist/ofi.min.js"></script>
+	<script src="../dist/ofi.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
 	<link rel="stylesheet" href="index.css">
 </head>
@@ -75,6 +75,19 @@
 	</section>
 	<section>
 		<h1>
+			<code>object-fit</code> specified on initialization (no <code>font-face</code>)
+		</h1>
+		<figure>
+			<img class="INIT-cover" src="image.jpg">
+			<figcaption><code>object-fit: cover</code></figcaption>
+		</figure>
+		<figure>
+			<img class="INIT-cover-op object-position" src="image.jpg">
+			<figcaption><code>object-fit: cover</code> <br><code>object-position: center 80%</code></figcaption>
+		</figure>
+	</section>
+	<section>
+		<h1>
 			Responsive images (with <a href="https://github.com/scottjehl/picturefill">picturefill</a> where needed)
 		</h1>
 		<figure>
@@ -92,10 +105,26 @@
 	function applyOFI(forced, viaUrl) {
 		var btn = document.querySelector('button');
 		btn.disabled = true;
+		
+		// default images
 		objectFitImages(false, {
 			watchMQ: true,
 			skipTest: forced
 		});
+		
+		// images with javascript provided properties
+		objectFitImages('.INIT-cover', {
+			watchMQ: true,
+			objectFit: 'cover',
+			skipTest: forced
+		});
+		objectFitImages('.INIT-cover-op', {
+			watchMQ: true,
+			objectFit: 'cover',
+			objectPosition: 'center 80%',
+			skipTest: forced
+		});
+		
 		if (objectFitImages.supportsObjectPosition) {
 			btn.innerHTML = 'Fix applied anyway' + (viaUrl ? ' via URL' : '');
 		} else {
