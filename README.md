@@ -65,7 +65,7 @@ You will need 3 things
 	
 	To generate the `font-family` automatically, you can use the [PostCSS plugin](https://github.com/ronik-design/postcss-object-fit-images) or the [SCSS/SASS/Less mixins.](/preprocessors)
 	
-	If you set the `font-family` via javascript (which must be followed by calling `objectFitImages()`), make sure to include the quotes [**in** the property.](https://github.com/bfred-it/object-fit-images/issues/29#issuecomment-227491892)
+	If you set the `font-family` via JavaScript (which must be followed by calling `objectFitImages()`), make sure to include the quotes [**in** the property.](https://github.com/bfred-it/object-fit-images/issues/29#issuecomment-227491892)
 
 3. <a name="activation"></a> the activation call before `</body>`, or _on DOM ready_
 
