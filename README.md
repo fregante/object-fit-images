@@ -1,4 +1,4 @@
-# object-fit-images [![gzipped size][badge-gzip]](#no-link) [![Travis build status][badge-travis]][link-travis] [![npm version][badge-version]][link-npm] [![CDNJS version][badge-cdnjs]][link-cdnjs]
+# object-fit-images [![gzipped size][badge-gzip]](#no-link) [![Travis build status][badge-travis]][link-travis] [![npm version][badge-version]][link-npm] [![CDNJS version][badge-cdnjs]][link-cdnjs] [![jsDelivr Hits][jsdelivr-image]][jsdelivr-url]
 
   [badge-gzip]: https://badges.herokuapp.com/size/github/bfred-it/object-fit-images/master/dist/ofi.min.js?gzip=true&label=gzipped%20size
   [badge-travis]: https://api.travis-ci.org/bfred-it/object-fit-images.svg
@@ -7,6 +7,8 @@
   [link-travis]: https://travis-ci.org/bfred-it/object-fit-images
   [link-npm]: https://www.npmjs.com/package/object-fit-images
   [link-cdnjs]: https://cdnjs.com/libraries/object-fit-images
+  [jsdelivr-image]: https://data.jsdelivr.com/v1/package/npm/object-fit-images/badge?style=rounded 
+  [jsdelivr-url]: https://www.jsdelivr.com/package/npm/object-fit-images
 
 > 🗻 Polyfill object-fit/object-position on `<img>`: IE9, IE10, IE11, Edge, Safari, ...
 
