@@ -143,7 +143,7 @@ var objectFitImages = require('object-fit-images');
 ```
 
 ```js
-import objectFitImages from 'object-fit-images';
+import * as objectFitImages from 'object-fit-images';
 ```
 
 ## API
