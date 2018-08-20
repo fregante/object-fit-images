@@ -3,7 +3,7 @@ var objectFitImages = (function () {
 'use strict';
 
 var OFI = 'bfred-it:object-fit-images';
-var propRegex = /(object-fit|object-position)\s*:\s*([-\w\s%]+)/g;
+var propRegex = /(object-fit|object-position)\s*:\s*([-.\w\s%]+)/g;
 var testImg = typeof Image === 'undefined' ? {style: {'object-position': 1}} : new Image();
 var supportsObjectFit = 'object-fit' in testImg.style;
 var supportsObjectPosition = 'object-position' in testImg.style;
