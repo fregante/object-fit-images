@@ -31,6 +31,7 @@
     "preprocessors"
   ],
   "main": "dist/ofi.common-js.js",
+  "module": "dist/ofi.es-modules.js",
   "scripts": {
     "build:js": "bfred-npm-bundler ofi objectFitImages",
     "build": "npm-run-all --silent jsfix build:*",
