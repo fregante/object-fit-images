@@ -1,4 +1,4 @@
-const OFI = 'bfred-it:object-fit-images';
+const OFI = 'fregante:object-fit-images';
 const propRegex = /(object-fit|object-position)\s*:\s*([-.\w\s%]+)/g;
 const testImg = typeof Image === 'undefined' ? {style: {'object-position': 1}} : new Image();
 const supportsObjectFit = 'object-fit' in testImg.style;
@@ -92,7 +92,7 @@ function fixOne(el) {
 		ofi.img.src = nativeGetAttribute.call(el, `data-ofi-src`) || el.src;
 
 		// preserve for any future cloneNode calls
-		// https://github.com/bfred-it/object-fit-images/issues/53
+		// https://github.com/fregante/object-fit-images/issues/53
 		nativeSetAttribute.call(el, `data-ofi-src`, el.src);
 		if (el.srcset) {
 			nativeSetAttribute.call(el, `data-ofi-srcset`, el.srcset);

@@ -17,7 +17,7 @@ Otherwise `srcset` will be discarded in both cases.
 
 ## *object-fit-images* + `picture`
 
-💔 Not supported. Feature tracked here: https://github.com/bfred-it/object-fit-images/issues/3
+💔 Not supported. Feature tracked here: https://github.com/fregante/object-fit-images/issues/3
 
 ## Can I Use
 

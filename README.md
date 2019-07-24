@@ -1,18 +1,18 @@
 # object-fit-images [![gzipped size][badge-gzip]](#no-link) [![build status][badge-travis]][link-travis] [![npm][badge-version]][link-npm] [![CDNJS][badge-cdnjs]][link-cdnjs] [![jsDelivr][badge-jsdelivr]][link-jsdelivr]
 
-  [badge-gzip]: https://badges.herokuapp.com/size/github/bfred-it/object-fit-images/master/dist/ofi.min.js?gzip=true&label=gzipped%20size
-  [badge-travis]: https://api.travis-ci.org/bfred-it/object-fit-images.svg
+  [badge-gzip]: https://badges.herokuapp.com/size/github/fregante/object-fit-images/master/dist/ofi.min.js?gzip=true&label=gzipped%20size
+  [badge-travis]: https://api.travis-ci.org/fregante/object-fit-images.svg
   [badge-version]: https://img.shields.io/npm/v/object-fit-images.svg
   [badge-cdnjs]: https://img.shields.io/cdnjs/v/object-fit-images.svg
-  [badge-jsdelivr]: https://data.jsdelivr.com/v1/package/npm/object-fit-images/badge?style=rounded 
-  [link-travis]: https://travis-ci.org/bfred-it/object-fit-images
+  [badge-jsdelivr]: https://data.jsdelivr.com/v1/package/npm/object-fit-images/badge?style=rounded
+  [link-travis]: https://travis-ci.org/fregante/object-fit-images
   [link-npm]: https://www.npmjs.com/package/object-fit-images
   [link-cdnjs]: https://cdnjs.com/libraries/object-fit-images
   [link-jsdelivr]: https://www.jsdelivr.com/package/npm/object-fit-images
 
 > 🗻 Polyfill object-fit/object-position on `<img>`: IE9, IE10, IE11, Edge, Safari, ...
 
-- Fast and lightweight ([demo](http://bfred-it.github.io/object-fit-images/demo/))
+- Fast and lightweight ([demo](http://fregante.github.io/object-fit-images/demo/))
 - No additional elements are created
 - Setup is done via CSS
 - Scaling is taken care by the browser (it uses `background-size`)
@@ -22,7 +22,7 @@
 ## Alternative solutions
 
 
-Comparison           | bfred-it<br>/object-fit-images🌟                                                                                         | [constancecchen<br>/object-fit-polyfill](https://github.com/constancecchen/object-fit-polyfill) | [tonipinel<br>/object-fit-polyfill](https://github.com/tonipinel/object-fit-polyfill)
+Comparison           | fregante<br>/object-fit-images🌟                                                                                         | [constancecchen<br>/object-fit-polyfill](https://github.com/constancecchen/object-fit-polyfill) | [tonipinel<br>/object-fit-polyfill](https://github.com/tonipinel/object-fit-polyfill)
 ---              | ---                                                                                                      | ---                                                                                            | ---
 Browsers          | <sub>IEdge 9-14, Android<5, Safari<10</sub>                                                                          | <- Same                                                                                         | "All browsers"
 Tags              | `img`                                                                                                     | `image` `video` `picture`                                                                     | `img`
@@ -40,12 +40,12 @@ Settings    | 💚 via CSS                                                      
 
 You will need 3 things
 
-1. one or more `<img>` elements with `src` or `srcset`  
+1. one or more `<img>` elements with `src` or `srcset`
 
 	```html
 	<img class='your-favorite-image' src='image.jpg'>
 	```
-	
+
 2. CSS defining `object-fit` and a special `font-family` property to allow IE to read the correct value
 
 	```css
@@ -54,9 +54,9 @@ You will need 3 things
 		font-family: 'object-fit: contain;';
 	}
 	```
-	
+
 	or, if you also need `object-position`
-	
+
 	```css
 	.your-favorite-image {
 		object-fit: cover;
@@ -64,10 +64,10 @@ You will need 3 things
 		font-family: 'object-fit: cover; object-position: bottom;';
 	}
 	```
-	
+
 	To generate the `font-family` automatically, you can use the [PostCSS plugin](https://github.com/ronik-design/postcss-object-fit-images) or the [SCSS/SASS/Less mixins.](/preprocessors)
-	
-	If you set the `font-family` via JavaScript (which must be followed by calling `objectFitImages()`), make sure to include the quotes [**in** the property.](https://github.com/bfred-it/object-fit-images/issues/29#issuecomment-227491892)
+
+	If you set the `font-family` via JavaScript (which must be followed by calling `objectFitImages()`), make sure to include the quotes [**in** the property.](https://github.com/fregante/object-fit-images/issues/29#issuecomment-227491892)
 
 3. <a name="activation"></a> the activation call before `</body>`, or _on DOM ready_
 
@@ -75,34 +75,34 @@ You will need 3 things
 	objectFitImages();
 	// if you use jQuery, the code is: $(function () { objectFitImages() });
 	```
-	
+
 	This will fix all the images on the page **and** also all the images added later (auto mode).
-	
+
 	Alternatively, only fix the images you want, once:
-	
+
 	```js
 	// pass a selector
 	objectFitImages('img.some-image');
 	```
-	
+
 	```js
 	// an array/NodeList
 	var someImages = document.querySelectorAll('img.some-image');
 	objectFitImages(someImages);
 	```
-	
+
 	```js
 	// a single element
 	var oneImage = document.querySelector('img.some-image');
 	objectFitImages(oneImage);
 	```
-	
+
 	```js
 	// or with jQuery
 	var $someImages = $('img.some-image');
 	objectFitImages($someImages);
 	```
-	
+
 	You can call `objectFitImages()` on the same elements more than once without issues, for example to manually request an update of the `object-fit` value.
 
 ## Apply on `resize`
@@ -162,7 +162,7 @@ Both parameters are optional.
         <td>
             Type: <code>string</code>, <code>element</code>, <code>array</code>, <code>NodeList</code>, <code>null</code><br>
             Default: <code>null</code><br><br>
-            The images to fix. More info in the <a href="#usage">Usage</a> section 
+            The images to fix. More info in the <a href="#usage">Usage</a> section
         </td>
     </tr>
     <tr>
@@ -187,4 +187,4 @@ Both parameters are optional.
 
 ## License
 
-MIT © [Federico Brigante](http://twitter.com/bfred_it)
+MIT © [Federico Brigante](http://bfred.it)
