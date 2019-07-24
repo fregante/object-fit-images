@@ -187,4 +187,4 @@ Both parameters are optional.
 
 ## License
 
-MIT © [Federico Brigante](http://bfred.it)
+MIT © [Federico Brigante](https://bfred.it)
