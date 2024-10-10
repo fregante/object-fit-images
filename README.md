@@ -1,11 +1,9 @@
-# object-fit-images [![gzipped size][badge-gzip]](#no-link) [![build status][badge-travis]][link-travis] [![npm][badge-version]][link-npm] [![CDNJS][badge-cdnjs]][link-cdnjs] [![jsDelivr][badge-jsdelivr]][link-jsdelivr]
+# object-fit-images [![gzipped size][badge-gzip]](#no-link) [![npm][badge-version]][link-npm] [![CDNJS][badge-cdnjs]][link-cdnjs] [![jsDelivr][badge-jsdelivr]][link-jsdelivr]
 
   [badge-gzip]: https://badges.herokuapp.com/size/github/fregante/object-fit-images/master/dist/ofi.min.js?gzip=true&label=gzipped%20size
-  [badge-travis]: https://api.travis-ci.org/fregante/object-fit-images.svg
   [badge-version]: https://img.shields.io/npm/v/object-fit-images.svg
   [badge-cdnjs]: https://img.shields.io/cdnjs/v/object-fit-images.svg
   [badge-jsdelivr]: https://data.jsdelivr.com/v1/package/npm/object-fit-images/badge?style=rounded
-  [link-travis]: https://travis-ci.org/fregante/object-fit-images
   [link-npm]: https://www.npmjs.com/package/object-fit-images
   [link-cdnjs]: https://cdnjs.com/libraries/object-fit-images
   [link-jsdelivr]: https://www.jsdelivr.com/package/npm/object-fit-images
