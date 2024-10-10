@@ -184,7 +184,3 @@ Both parameters are optional.
         </td>
     </tr>
 </table>
-
-## License
-
-MIT © [Federico Brigante](https://bfred.it)
